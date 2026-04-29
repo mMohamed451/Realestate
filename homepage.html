@@ -1,0 +1,702 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لافيدا ريالتي | lavida-realty - Real Estate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" aria-label="التنقل الرئيسي">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <div class="logo-icon">L</div>
+                <div class="logo-text">
+                    <span class="logo-text-ar">لافيدا ريالتي</span>
+                    <span class="logo-text-en">lavida-realty</span>
+                </div>
+            </a>
+
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="projects.html">مشاريعنا</a></li>
+                    <li><a href="#about">من نحن</a></li>
+                    <li><a href="programs.html">برامجنا</a></li>
+                    <li><a href="news.html">الأخبار</a></li>
+                    <li><a href="about-us.html">تواصل معنا</a></li>
+                </ul>
+                <button type="button" class="btn-login" aria-label="تسجيل الدخول">
+                    <i class="fas fa-circle-user" aria-hidden="true"></i>
+                    تسجيل الدخول
+                </button>
+                <button type="button" class="mobile-menu-btn" onclick="toggleMenu()" aria-label="فتح القائمة">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="overlay" onclick="toggleMenu()"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" onclick="toggleMenu()">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="mobile-menu-links">
+            <li><a href="#home" onclick="toggleMenu()">الرئيسية</a></li>
+            <li><a href="projects.html" onclick="toggleMenu()">مشاريعنا</a></li>
+            <li><a href="#about" onclick="toggleMenu()">من نحن</a></li>
+            <li><a href="programs.html" onclick="toggleMenu()">برامجنا</a></li>
+            <li><a href="news.html" onclick="toggleMenu()">الأخبار</a></li>
+            <li><a href="about-us.html" onclick="toggleMenu()">تواصل معنا</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">✦ شركة عقارية رائدة في المملكة</div>
+            <h1>ابنِ مستقبلك مع <span>لافيدا ريالتي</span></h1>
+            <p>نقدم لك تجربة عقارية فريدة تجمع بين الفخامة والابتكار، لنحول حلمك في امتلاك منزل العمر إلى حقيقة</p>
+            <div class="hero-buttons">
+                <a href="projects.html" class="btn btn-primary">استكشف مشاريعنا</a>
+                <a href="about-us.html" class="btn btn-outline">تواصل مع مستشارك</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item fade-in">
+                <span class="stat-number" data-target="250">0</span>
+                <span class="stat-label">عميل سعيد</span>
+            </div>
+            <div class="stat-item fade-in">
+                <span class="stat-number" data-target="45">0</span>
+                <span class="stat-label">مشروع عقاري</span>
+            </div>
+            <div class="stat-item fade-in">
+                <span class="stat-number" data-target="12">0</span>
+                <span class="stat-label">سنة خبرة</span>
+            </div>
+            <div class="stat-item fade-in">
+                <span class="stat-number" data-target="98">0</span>
+                <span class="stat-label">% نسبة الرضا</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="projects" id="projects">
+        <div class="section-header fade-in">
+            <h2>مشاريعنا <span>المختارة</span></h2>
+            <div class="section-line"></div>
+            <p>تصفح أرقى مشاريع وعروض لافيدا ريالتي العقارية المتميزة</p>
+        </div>
+        
+        <div class="projects-grid">
+            <a href="projects.html#projectsGrid" class="project-card fade-in">
+                <img src="https://thumbs.dreamstime.com/b/luxury-penthouse-terrace-overlooking-cityscape-night-modern-design-elegant-rooftop-terrace-luxury-penthouse-featuring-368340204.jpg" alt="مشروع النخبة السكني">
+                <div class="project-price">يبدأ من 1,200,000 ر.س</div>
+                <div class="project-overlay">
+                    <span class="project-tag">للبيع</span>
+                    <h3 class="project-title">مشروع النخبة السكني</h3>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        الرياض - حي الياسمين
+                    </div>
+                </div>
+            </a>
+            
+            <a href="projects.html#projectsGrid" class="project-card fade-in">
+                <img src="https://cdn9.dissolve.com/p/D1007_4_333/D1007_4_333_1200.jpg" alt="مشروع الفيصلية الفاخر">
+                <div class="project-price">يبدأ من 2,500,000 ر.س</div>
+                <div class="project-overlay">
+                    <span class="project-tag">للبيع</span>
+                    <h3 class="project-title">مشروع الفيصلية الفاخر</h3>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        جدة - حي الشاطئ
+                    </div>
+                </div>
+            </a>
+            
+            <a href="projects.html#projectsGrid" class="project-card fade-in">
+                <img src="https://thumbs.dreamstime.com/b/modern-apartment-living-room-overlooking-night-city-skyline-blue-tone-contemporary-interior-offers-stunning-views-391061718.jpg" alt="مشروع المروج السكني">
+                <div class="project-price">يبدأ من 890,000 ر.س</div>
+                <div class="project-overlay">
+                    <span class="project-tag">للبيع</span>
+                    <h3 class="project-title">مشروع المروج السكني</h3>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        الدمام - حي النور
+                    </div>
+                </div>
+            </a>
+            
+            <a href="projects.html#projectsGrid" class="project-card fade-in">
+                <img src="https://www.shutterstock.com/image-photo/new-modern-block-flats-green-600nw-2667743883.jpg" alt="مشروع الواحة 2">
+                <div class="project-price">يبدأ من 750,000 ر.س</div>
+                <div class="project-overlay">
+                    <span class="project-tag">للبيع</span>
+                    <h3 class="project-title">مشروع الواحة 2 السكني</h3>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        مكة - حي العزيزية
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Vision & About -->
+    <section class="vision" id="about">
+        <div class="vision-container">
+            <div class="vision-grid">
+                <div class="vision-content fade-in">
+                    <h2>رؤية <span>لافيدا ريالتي</span></h2>
+                    <p>أن نكون الخيار الأول والأهم في السوق العقاري السعودي، بتقديم أفضل البرامج العقارية والاستثمارية المتوافقة مع رؤية المملكة 2030.</p>
+                    <p>نؤمن بأن كل عميل يستحق تجربة عقارية استثنائية تجمع بين الجودة العالية والشفافية الكاملة والخدمة المتميزة.</p>
+                    <div style="margin-top: 2rem;">
+                        <a href="#" class="btn btn-primary">اكتشف المزيد</a>
+                    </div>
+                </div>
+                <div class="vision-image fade-in">
+                    <img src="https://images.stockcake.com/public/7/7/2/772cd60d-1d32-4f02-a3e0-f0da8fcc6a55_large/modern-office-building-stockcake.jpg" alt="مبنى لافيدا ريالتي">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values -->
+    <section class="values">
+        <div class="section-header fade-in">
+            <h2>قيمنا <span>الأساسية</span></h2>
+            <div class="section-line"></div>
+            <p>نلتزم بأعلى معايير الجودة والمهنية في كل ما نقدمه</p>
+        </div>
+        
+        <div class="values-grid">
+            <div class="value-card fade-in">
+                <div class="value-icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3>رؤيتنا</h3>
+                <p>أن نكون أهم الخيارات المطروحة في السوق العقاري بتقديم أفضل البرامج العقارية والاستثمارية</p>
+            </div>
+            
+            <div class="value-card fade-in">
+                <div class="value-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3>أهدافنا</h3>
+                <p>الريادة في عالم العقار وتقديم كل ما هو جديد ومميز لنيل ثقة عملائنا الكرام</p>
+            </div>
+            
+            <div class="value-card fade-in">
+                <div class="value-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3>شراكتنا</h3>
+                <p>شراكات استراتيجية مع نخبة من المطورين والمستثمرين لتوفير قاعدة واسعة من العروض</p>
+            </div>
+            
+            <div class="value-card fade-in">
+                <div class="value-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>مسؤوليتنا</h3>
+                <p>المساهمة في خدمة المجتمع ودعم نمو قطاع الاستثمار العقاري وفق أحكام الشريعة</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs -->
+    <section class="programs" id="programs">
+        <div class="programs-container">
+            <div class="section-header fade-in">
+                <h2>برامجنا <span>المتميزة</span></h2>
+                <div class="section-line"></div>
+                <p>حلول عقارية متكاملة تلبي تطلعاتك وتناسب احتياجاتك</p>
+            </div>
+            
+            <div class="programs-grid">
+                <div class="program-card fade-in">
+                    <div class="program-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>برنامج البناء الذاتي</h3>
+                    <p>نمِّ عقارك على طريقتك الخاصة مع دعم كامل من فريقنا المتخصص في الإشراف والتنفيذ</p>
+                </div>
+                
+                <div class="program-card fade-in">
+                    <div class="program-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3>برنامج إيجار</h3>
+                    <p>حلول تأجير مرنة وموثوقة تجمع بين حقوق المالك والمستأجر بعقود موثقة وشفافة</p>
+                </div>
+                
+                <div class="program-card fade-in">
+                    <div class="program-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>برنامج فرصة</h3>
+                    <p>فرص استثمارية واعدة في أرقى المواقع العقارية مع عوائد تنافسية ومضمونة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+      News (API-ready): inject when data arrives — no carousel library required.
+      - Slides: append <article class="news-slide">…</article> as direct children of #newsCarouselViewport (order = feed order).
+      - Feed list: replace #newsQuickFeed rows; keep <button type="button" data-news-index="n"> aligned with slide index.
+      - Images: first slide loading="eager" fetchpriority="high"; rest loading="lazy" decoding="async"; keep width/height + sizes to limit CLS.
+      - Dots: update #newsCarouselDots buttons to match slide count, or remove the dots block.
+      - After DOM update: window.initNewsCarousel() to sync controls (listeners are bound once).
+    -->
+    <section class="news-section" id="news" aria-labelledby="news-heading">
+        <div class="news-container">
+            <div class="section-header fade-in">
+                <h2 id="news-heading">أخبار <span>لافيدا ريالتي</span></h2>
+                <div class="section-line"></div>
+                <p>مختارات سريعة وعروض مصورة — جاهزة للربط مع واجهة الأخبار لاحقاً دون إعادة تصميم الصفحة</p>
+            </div>
+
+            <div class="news-layout">
+                <div class="news-carousel-block">
+                    <div class="news-carousel-top">
+                        <h3>أبرز الأخبار</h3>
+                        <div class="news-carousel-controls">
+                            <button type="button" class="news-carousel-btn" id="newsCarouselPrev" aria-controls="newsCarouselViewport" aria-label="الشريحة السابقة">
+                                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                            </button>
+                            <button type="button" class="news-carousel-btn" id="newsCarouselNext" aria-controls="newsCarouselViewport" aria-label="الشريحة التالية">
+                                <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="news-carousel-viewport" id="newsCarouselViewport" tabindex="0" role="region" aria-roledescription="عرض شرائح" aria-label="أبرز الأخبار — مرّر أفقياً أو استخدم الأزرار">
+                        <article class="news-slide" data-news-index="0">
+                            <div class="news-slide-media">
+                                <img
+                                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80"
+                                    alt="واجهة فيلا عصرية مع حديقة"
+                                    width="1400"
+                                    height="788"
+                                    loading="eager"
+                                    fetchpriority="high"
+                                    decoding="async"
+                                    sizes="(max-width: 1024px) 100vw, 900px">
+                            </div>
+                            <div class="news-slide-body">
+                                <div class="news-slide-meta">
+                                    <span class="news-slide-badge">عروض</span>
+                                    <time datetime="2026-04-10">10 أبريل 2026</time>
+                                </div>
+                                <h4 class="news-slide-title">إطلاق حزمة تمويلية جديدة لعملاء لافيدا ريالتي</h4>
+                                <p class="news-slide-excerpt">تسهيلات مرنة وخيارات سداد تناسب مختلف الشرائح، بإشراف فريق الاستشارات لدينا.</p>
+                                <a class="news-slide-link" href="#">اكمل القراءة <i class="fas fa-arrow-left" aria-hidden="true"></i></a>
+                            </div>
+                        </article>
+
+                        <article class="news-slide" data-news-index="1">
+                            <div class="news-slide-media">
+                                <img
+                                    src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=80"
+                                    alt="غرفة معيشة بإطلالة زجاجية ليلية"
+                                    width="1400"
+                                    height="788"
+                                    loading="lazy"
+                                    decoding="async"
+                                    sizes="(max-width: 1024px) 100vw, 900px">
+                            </div>
+                            <div class="news-slide-body">
+                                <div class="news-slide-meta">
+                                    <span class="news-slide-badge">مشاريع</span>
+                                    <time datetime="2026-04-02">2 أبريل 2026</time>
+                                </div>
+                                <h4 class="news-slide-title">مشروع جديد في موقع استراتيجي بجدة</h4>
+                                <p class="news-slide-excerpt">واجهات معاصرة، مساحات خضراء، وتجربة سكنية متوازنة للعائلات.</p>
+                                <a class="news-slide-link" href="#">اكمل القراءة <i class="fas fa-arrow-left" aria-hidden="true"></i></a>
+                            </div>
+                        </article>
+
+                        <article class="news-slide" data-news-index="2">
+                            <div class="news-slide-media">
+                                <img
+                                    src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1400&q=80"
+                                    alt="مبنى سكني حديث بإضاءة خارجية"
+                                    width="1400"
+                                    height="788"
+                                    loading="lazy"
+                                    decoding="async"
+                                    sizes="(max-width: 1024px) 100vw, 900px">
+                            </div>
+                            <div class="news-slide-body">
+                                <div class="news-slide-meta">
+                                    <span class="news-slide-badge">شراكات</span>
+                                    <time datetime="2026-03-22">22 مارس 2026</time>
+                                </div>
+                                <h4 class="news-slide-title">شراكة استراتيجية لتعزيز حلول التمويل العقاري</h4>
+                                <p class="news-slide-excerpt">خطوة تهدف إلى تسريع إجراءات التمويل ورفع جودة التجربة للعملاء.</p>
+                                <a class="news-slide-link" href="#">اكمل القراءة <i class="fas fa-arrow-left" aria-hidden="true"></i></a>
+                            </div>
+                        </article>
+
+                        <article class="news-slide" data-news-index="3">
+                            <div class="news-slide-media">
+                                <img
+                                    src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1400&q=80"
+                                    alt="مجمع سكني فاخر مع مسبح"
+                                    width="1400"
+                                    height="788"
+                                    loading="lazy"
+                                    decoding="async"
+                                    sizes="(max-width: 1024px) 100vw, 900px">
+                            </div>
+                            <div class="news-slide-body">
+                                <div class="news-slide-meta">
+                                    <span class="news-slide-badge">فعاليات</span>
+                                    <time datetime="2026-03-08">8 مارس 2026</time>
+                                </div>
+                                <h4 class="news-slide-title">فعالية تعريفية لعملائنا في الرياض</h4>
+                                <p class="news-slide-excerpt">جولة تعريفية، استشارات فورية، وفرص لقاء مستشاريكم المباشرين.</p>
+                                <a class="news-slide-link" href="#">اكمل القراءة <i class="fas fa-arrow-left" aria-hidden="true"></i></a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="news-dots" id="newsCarouselDots" role="tablist" aria-label="مؤشر الشرائح">
+                        <button type="button" class="news-dot" data-index="0" role="tab" aria-selected="true" aria-label="الشريحة 1"></button>
+                        <button type="button" class="news-dot" data-index="1" role="tab" aria-selected="false" aria-label="الشريحة 2"></button>
+                        <button type="button" class="news-dot" data-index="2" role="tab" aria-selected="false" aria-label="الشريحة 3"></button>
+                        <button type="button" class="news-dot" data-index="3" role="tab" aria-selected="false" aria-label="الشريحة 4"></button>
+                    </div>
+                </div>
+
+                <aside class="news-feed-panel" aria-label="آخر الأخبار">
+                    <div class="news-feed-head">
+                        <h3>آخر الأخبار</h3>
+                        <span>مختارات سريعة</span>
+                    </div>
+                    <ul class="news-feed-list" id="newsQuickFeed">
+                        <li class="news-feed-item">
+                            <button type="button" data-news-index="0">
+                                <div class="news-feed-date">10 أبريل 2026</div>
+                                <div class="news-feed-title">إطلاق حزمة تمويلية جديدة لعملاء لافيدا ريالتي</div>
+                            </button>
+                        </li>
+                        <li class="news-feed-item">
+                            <button type="button" data-news-index="1">
+                                <div class="news-feed-date">2 أبريل 2026</div>
+                                <div class="news-feed-title">مشروع جديد في موقع استراتيجي بجدة</div>
+                            </button>
+                        </li>
+                        <li class="news-feed-item">
+                            <button type="button" data-news-index="2">
+                                <div class="news-feed-date">22 مارس 2026</div>
+                                <div class="news-feed-title">شراكة استراتيجية لتعزيز حلول التمويل العقاري</div>
+                            </button>
+                        </li>
+                        <li class="news-feed-item">
+                            <button type="button" data-news-index="3">
+                                <div class="news-feed-date">8 مارس 2026</div>
+                                <div class="news-feed-title">فعالية تعريفية لعملائنا في الرياض</div>
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="news-feed-footer">
+                        <a class="news-feed-all" href="news.html">جميع الأخبار <i class="fas fa-arrow-left" aria-hidden="true"></i></a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners -->
+    <section class="partners">
+        <div class="partners-container">
+            <h3 style="color: var(--text-muted); font-weight: 500; font-size: 1rem; letter-spacing: 2px;">شركاؤنا الاستراتيجيون</h3>
+            <div class="partners-logos">
+                <div class="partner-logo">SAB BANK</div>
+                <div class="partner-logo">RIYADH REALTY</div>
+                <div class="partner-logo">KAEC</div>
+                <div class="partner-logo">ROSHN</div>
+                <div class="partner-logo">Saudi Vision 2030</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="homepage.html#home" class="logo">
+                    <div class="logo-icon">L</div>
+                    <div class="logo-text">
+                        <span class="logo-text-ar">لافيدا ريالتي</span>
+                        <span class="logo-text-en">lavida-realty</span>
+                    </div>
+                </a>
+                <p>لافيدا ريالتي للعقارات - وجهتك الأولى للاستثمار العقاري المتميز في المملكة العربية السعودية</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="projects.html">مشاريعنا</a></li>
+                    <li><a href="#about">من نحن</a></li>
+                    <li><a href="programs.html">برامجنا</a></li>
+                    <li><a href="news.html">الأخبار</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>خدماتنا</h4>
+                <ul>
+                    <li><a href="#">البيع والشراء</a></li>
+                    <li><a href="#">التأجير</a></li>
+                    <li><a href="#">الاستثمار</a></li>
+                    <li><a href="#">التمويل العقاري</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>تواصل معنا</h4>
+                <ul>
+                    <li><a href="tel:920012345">9200 12345</a></li>
+                    <li><a href="mailto:info@naylalmakan.com">info@naylalmakan.com</a></li>
+                    <li><a href="#">الرياض، المملكة العربية السعودية</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2026 لافيدا ريالتي للعقارات. جميع الحقوق محفوظة</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+            document.querySelector('.overlay').classList.toggle('active');
+            document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('active') ? 'hidden' : '';
+        }
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Navbar Background on Scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(7, 11, 20, 0.92)';
+                navbar.style.boxShadow = '0 8px 32px rgba(0,0,0,0.35)';
+            } else {
+                navbar.style.background = 'rgba(7, 11, 20, 0.72)';
+                navbar.style.boxShadow = 'none';
+            }
+        });
+
+        // Fade In Animation on Scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Animate numbers if stat item
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    if (statNumber) {
+                        animateNumber(statNumber);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Number Counter Animation
+        function animateNumber(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    element.textContent = target + (target === 98 ? '%' : '+');
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current) + (target === 98 ? '%' : '');
+                }
+            }, 16);
+        }
+
+        // Parallax Effect for Hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroBg = document.querySelector('.hero-bg');
+            if (heroBg) {
+                heroBg.style.transform = `scale(1.1) translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // News carousel: native scroll-snap + lightweight JS. Safe to call again after API HTML inject (rebinds once per element via data flag).
+        function initNewsCarousel() {
+            const viewport = document.getElementById('newsCarouselViewport');
+            const btnPrev = document.getElementById('newsCarouselPrev');
+            const btnNext = document.getElementById('newsCarouselNext');
+            const dotsRoot = document.getElementById('newsCarouselDots');
+            const feed = document.getElementById('newsQuickFeed');
+            if (!viewport || !btnPrev || !btnNext) {
+                return;
+            }
+
+            const getSlides = () => Array.from(viewport.querySelectorAll('.news-slide'));
+
+            function slideSpan() {
+                return Math.max(1, viewport.clientWidth);
+            }
+
+            function maxScrollLeft() {
+                return Math.max(0, viewport.scrollWidth - viewport.clientWidth);
+            }
+
+            let scrollRaf = 0;
+            function syncChrome() {
+                const x = viewport.scrollLeft;
+                const span = slideSpan();
+                const total = getSlides().length;
+                const approx = total === 0 ? 0 : Math.min(
+                    total - 1,
+                    Math.max(0, Math.round(x / span))
+                );
+
+                btnPrev.disabled = x <= 1;
+                btnNext.disabled = x >= maxScrollLeft() - 1;
+
+                if (dotsRoot) {
+                    dotsRoot.querySelectorAll('.news-dot').forEach((dot, i) => {
+                        const on = i === approx;
+                        dot.setAttribute('aria-selected', on ? 'true' : 'false');
+                        dot.tabIndex = on ? 0 : -1;
+                    });
+                }
+            }
+
+            function onScroll() {
+                if (scrollRaf) {
+                    return;
+                }
+                scrollRaf = requestAnimationFrame(() => {
+                    syncChrome();
+                    scrollRaf = 0;
+                });
+            }
+
+            function goToIndex(index) {
+                const slides = getSlides();
+                if (slides.length === 0) {
+                    return;
+                }
+                const i = Math.max(0, Math.min(slides.length - 1, index));
+                viewport.scrollTo({ left: i * slideSpan(), behavior: 'smooth' });
+            }
+
+            if (!viewport.dataset.carouselBound) {
+                viewport.dataset.carouselBound = '1';
+                btnPrev.addEventListener('click', () => {
+                    viewport.scrollBy({ left: -slideSpan(), behavior: 'smooth' });
+                });
+                btnNext.addEventListener('click', () => {
+                    viewport.scrollBy({ left: slideSpan(), behavior: 'smooth' });
+                });
+                viewport.addEventListener('scroll', onScroll, { passive: true });
+            }
+
+            if (dotsRoot && !dotsRoot.dataset.dotsBound) {
+                dotsRoot.dataset.dotsBound = '1';
+                dotsRoot.addEventListener('click', (e) => {
+                    const t = e.target;
+                    if (!(t instanceof HTMLElement) || !t.classList.contains('news-dot')) {
+                        return;
+                    }
+                    const idx = Number.parseInt(t.getAttribute('data-index') ?? '', 10);
+                    if (!Number.isNaN(idx)) {
+                        goToIndex(idx);
+                    }
+                });
+            }
+
+            if (feed && !feed.dataset.feedBound) {
+                feed.dataset.feedBound = '1';
+                feed.addEventListener('click', (e) => {
+                    const btn = e.target instanceof Element ? e.target.closest('button[data-news-index]') : null;
+                    if (!btn) {
+                        return;
+                    }
+                    const idx = Number.parseInt(btn.getAttribute('data-news-index') ?? '', 10);
+                    if (!Number.isNaN(idx)) {
+                        goToIndex(idx);
+                    }
+                });
+            }
+
+            let resizeRaf = 0;
+            if (!window.__newsResizeBound) {
+                window.__newsResizeBound = true;
+                window.addEventListener('resize', () => {
+                    if (resizeRaf) {
+                        return;
+                    }
+                    resizeRaf = requestAnimationFrame(() => {
+                        syncChrome();
+                        resizeRaf = 0;
+                    });
+                });
+            }
+
+            syncChrome();
+        }
+
+        window.initNewsCarousel = initNewsCarousel;
+        initNewsCarousel();
+    </script>
+</body>
+</html>

@@ -1,0 +1,702 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أخبار لافيدا ريالتي | lavida-realty News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" aria-label="التنقل الرئيسي">
+        <div class="nav-container">
+            <a href="homepage.html" class="logo">
+                <div class="logo-icon">L</div>
+                <div class="logo-text">
+                    <span class="logo-text-ar">لافيدا ريالتي</span>
+                    <span class="logo-text-en">lavida-realty</span>
+                </div>
+            </a>
+
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="homepage.html">الرئيسية</a></li>
+                    <li><a href="projects.html">مشاريعنا</a></li>
+                    <li><a href="homepage.html#about">من نحن</a></li>
+                    <li><a href="programs.html">برامجنا</a></li>
+                    <li><a href="news.html" aria-current="page">الأخبار</a></li>
+                    <li><a href="about-us.html">تواصل معنا</a></li>
+                </ul>
+                <button type="button" class="btn-login" aria-label="تسجيل الدخول">
+                    <i class="fas fa-circle-user" aria-hidden="true"></i>
+                    تسجيل الدخول
+                </button>
+                <button type="button" class="mobile-menu-btn" onclick="toggleMenu()" aria-label="فتح القائمة">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="overlay" onclick="toggleMenu()"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" onclick="toggleMenu()">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="mobile-menu-links">
+            <li><a href="homepage.html" onclick="toggleMenu()">الرئيسية</a></li>
+            <li><a href="projects.html" onclick="toggleMenu()">مشاريعنا</a></li>
+            <li><a href="homepage.html#about" onclick="toggleMenu()">من نحن</a></li>
+            <li><a href="programs.html" onclick="toggleMenu()">برامجنا</a></li>
+            <li><a href="news.html" onclick="toggleMenu()">الأخبار</a></li>
+            <li><a href="about-us.html" onclick="toggleMenu()">تواصل معنا</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Banner -->
+    <section class="news-hero">
+        <div class="news-hero-bg"></div>
+        <div class="news-hero-overlay"></div>
+        <div class="news-hero-content">
+            <div class="breadcrumb">
+                <a href="homepage.html">الرئيسية</a>
+                <i class="fas fa-chevron-left"></i>
+                <span>الأخبار</span>
+            </div>
+            <h1>أخبار <span>لافيدا ريالتي</span> العقارية</h1>
+            <p>تابع آخر مستجداتنا، العروض الحصرية، الشراكات الاستراتيجية، والإنجازات المتميزة</p>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="filters-section">
+        <div class="filters-container">
+            <button class="filter-btn active" onclick="filterNews('all', this)">
+                <i class="fas fa-layer-group"></i> الكل
+            </button>
+            <button class="filter-btn" onclick="filterNews('offer', this)">
+                <i class="fas fa-tag"></i> عروض
+            </button>
+            <button class="filter-btn" onclick="filterNews('article', this)">
+                <i class="fas fa-newspaper"></i> مقالات
+            </button>
+            <button class="filter-btn" onclick="filterNews('partnership', this)">
+                <i class="fas fa-handshake"></i> شراكات
+            </button>
+            <button class="filter-btn" onclick="filterNews('award', this)">
+                <i class="fas fa-trophy"></i> جوائز
+            </button>
+        </div>
+    </section>
+
+    <!-- News Grid -->
+    <section class="news-archive">
+        <div class="news-grid" id="newsGrid">
+            
+            <!-- Featured Article -->
+            <div class="news-card featured fade-in" data-category="article" onclick="openModal(1)">
+                <div class="news-image">
+                    <img src="https://api.wealthconsulting.live/media/image/672e25f6131316cb1fdbe615.jpg" alt="رؤية 2030">
+                    <span class="news-category article">مقال</span>
+                </div>
+                <div class="news-content">
+                    <div class="news-date">
+                        <i class="far fa-calendar-alt"></i>
+                        15 أبريل 2026
+                    </div>
+                    <h3 class="news-title">كيف نصنع قيمة استثمارية حقيقية في ظل رؤية 2030؟</h3>
+                    <p class="news-excerpt">
+                        في بيئة تتسم بتقلب الطلب وارتفاع توقعات المستثمرين والمشترين، لا يتوقف دور المطوّر أو المستثمر عند تصميم مشروع جذاب بل يتحول إلى قيادة منظومة خدماتٍ تُترجم الرؤية إلى قيمة قابلة للقياس. لافيدا ريالتي تقدم نموذجاً متكاملاً للاستثمار العقاري المستدام.
+                    </p>
+                    <span class="read-more">
+                        اقرأ المزيد <i class="fas fa-arrow-left"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Offer Card -->
+            <div class="news-card fade-in" data-category="offer" onclick="openModal(2)">
+                <div class="news-image">
+                    <img src="https://realestatemarket.us.com/wp-content/uploads/2024/07/r-architecture-2gDwlIim3Uw-unsplash-1024x683.jpg" alt="عرض خاص">
+                    <span class="news-category offer">عرض</span>
+                </div>
+                <div class="news-content">
+                    <div class="news-date">
+                        <i class="far fa-calendar-alt"></i>
+                        12 أبريل 2026
+                    </div>
+                    <h3 class="news-title">قسّطها بسعر الكاش - بداية فصل جديد في حياتك</h3>
+                    <p class="news-excerpt">
+                        احجز استشارتك اليوم ولتؤجل فرصتك لتتملك. مساحات تصل إلى 240 م² بأسعار تبدأ من 385 ألف ر.س مع خيارات سداد مرنة حتى 6 أعوام.
+                    </p>
+                    <span class="read-more">
+                        اقرأ المزيد <i class="fas fa-arrow-left"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Partnership Card -->
+            <div class="news-card fade-in" data-category="partnership" onclick="openModal(3)">
+                <div class="news-image">
+                    <img src="https://www.arabnews.com/sites/default/files/styles/n_670_395/public/2023/02/25/3697131-1487349433.jpg?itok=IqTZieQg" alt="تعاون استراتيجي">
+                    <span class="news-category partnership">شراكة</span>
+                </div>
+                <div class="news-content">
+                    <div class="news-date">
+                        <i class="far fa-calendar-alt"></i>
+                        8 أبريل 2026
+                    </div>
+                    <h3 class="news-title">لافيدا ريالتي توقع اتفاقية تعاون مشترك مع بنك الرياض</h3>
+                    <p class="news-excerpt">
+                        اتفاقية استراتيجية تهدف إلى تسهيل إجراءات التمويل العقاري لعملاء لافيدا ريالتي مع حلول تمويلية متنوعة ومنافسة.
+                    </p>
+                    <span class="read-more">
+                        اقرأ المزيد <i class="fas fa-arrow-left"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Award Card -->
+            <div class="news-card fade-in" data-category="award" onclick="openModal(4)">
+                <div class="news-image">
+                    <img src="https://media.antonovich-design.ae/uploads/gallery/2022/8/antonovich-design-2022BTyf2ykmnxPU.jpg" alt="جائزة عقارية">
+                    <span class="news-category award">جائزة</span>
+                </div>
+                <div class="news-content">
+                    <div class="news-date">
+                        <i class="far fa-calendar-alt"></i>
+                        2 أبريل 2026
+                    </div>
+                    <h3 class="news-title">لافيدا ريالتي تحصد جائزة التميز في قطاع العقارات 2026</h3>
+                    <p class="news-excerpt">
+                        تكريم دولي يعكس التزامنا بأعلى معايير الجودة والابتكار في تقديم الحلول العقارية المتميزة في المملكة العربية السعودية.
+                    </p>
+                    <span class="read-more">
+                        اقرأ المزيد <i class="fas fa-arrow-left"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Article Card -->
+            <div class="news-card fade-in" data-category="article" onclick="openModal(5)">
+                <div class="news-image">
+                    <img src="https://assets.fixr.com/fixr-article2025-real_estate_stats-dark_value.png" alt="تحليل سوق">
+                    <span class="news-category article">مقال</span>
+                </div>
+                <div class="news-content">
+                    <div class="news-date">
+                        <i class="far fa-calendar-alt"></i>
+                        28 مارس 2026
+                    </div>
+                    <h3 class="news-title">توقعات سوق العقار السعودي 2026: فرص وتحديات</h3>
+                    <p class="news-excerpt">
+                        تحليل شامل لأداء السوق العقاري في الربع الأول من 2026 مع التركيز على الفرص الاستثمارية الواعدة في المدن الرئيسية.
+                    </p>
+                    <span class="read-more">
+                        اقرأ المزيد <i class="fas fa-arrow-left"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Partnership Card -->
+            <div class="news-card fade-in" data-category="partnership" onclick="openModal(6)">
+                <div class="news-image">
+                    <img src="https://theluxuryplaybook.com/wp-content/uploads/2023/11/Copy-of-The-Luxury-Playbook-Articles-3.png" alt="شراكة بنكية">
+                    <span class="news-category partnership">شراكة</span>
+                </div>
+                <div class="news-content">
+                    <div class="news-date">
+                        <i class="far fa-calendar-alt"></i>
+                        20 مارس 2026
+                    </div>
+                    <h3 class="news-title">توقيع اتفاقية مع البنك الأهلي السعودي SNB</h3>
+                    <p class="news-excerpt">
+                        شراكة جديدة تتيح لعملاء لافيدا ريالتي الاستفادة من برامج تمويلية حصرية بمعدلات ربح تنافسية وإجراءات ميسرة.
+                    </p>
+                    <span class="read-more">
+                        اقرأ المزيد <i class="fas fa-arrow-left"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Offer Card -->
+            <div class="news-card fade-in" data-category="offer" onclick="openModal(7)">
+                <div class="news-image">
+                    <img src="https://sumesshmenonassociates.com/wp-content/uploads/2023/09/living-room-furniture-banner-new.webp" alt="عرض عقاري">
+                    <span class="news-category offer">عرض</span>
+                </div>
+                <div class="news-content">
+                    <div class="news-date">
+                        <i class="far fa-calendar-alt"></i>
+                        15 مارس 2026
+                    </div>
+                    <h3 class="news-title">مع لافيدا ريالتي، التملّك أصبح أقرب مما تتوقع</h3>
+                    <p class="news-excerpt">
+                        امتلاك المسكن لم يعد قرارًا مؤجلًا. حلول سكنية تجمع بين التصميم العملي والمواقع المختارة بعناية وخطط سداد مرنة.
+                    </p>
+                    <span class="read-more">
+                        اقرأ المزيد <i class="fas fa-arrow-left"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Award Card -->
+            <div class="news-card fade-in" data-category="award" onclick="openModal(8)">
+                <div class="news-image">
+                    <img src="https://www.elantechnology.com/wp-content/uploads/2018/04/ISO-9001-2015.jpg" alt="شهادة ISO">
+                    <span class="news-category award">جائزة</span>
+                </div>
+                <div class="news-content">
+                    <div class="news-date">
+                        <i class="far fa-calendar-alt"></i>
+                        5 مارس 2026
+                    </div>
+                    <h3 class="news-title">لافيدا ريالتي تحصل على شهادة الجودة العالمية ISO 9001</h3>
+                    <p class="news-excerpt">
+                        اعتراف دولي بجودة إجراءاتنا وخدماتنا، مما يعزز ثقة عملائنا وشركائنا في التزامنا بأعلى معايير التميز.
+                    </p>
+                    <span class="read-more">
+                        اقرأ المزيد <i class="fas fa-arrow-left"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Article Card -->
+            <div class="news-card fade-in" data-category="article" onclick="openModal(9)">
+                <div class="news-image">
+                    <img src="https://c8.alamy.com/comp/2RBFKM3/illuminated-during-the-night-modern-building-in-the-center-of-al-khobar-with-green-cactuses-in-the-foreground-saudi-arabia-2RBFKM3.jpg" alt="تطوير عقاري">
+                    <span class="news-category article">مقال</span>
+                </div>
+                <div class="news-content">
+                    <div class="news-date">
+                        <i class="far fa-calendar-alt"></i>
+                        25 فبراير 2026
+                    </div>
+                    <h3 class="news-title">كيف تدعم لافيدا المستثمرين والمطوّرين؟</h3>
+                    <p class="news-excerpt">
+                        خدمة ما بعد البيع، حلول تمويلية، تسويق احترافي، وإدارة استثمارات عقارية - منظومة متكاملة لنجاح مشروعك.
+                    </p>
+                    <span class="read-more">
+                        اقرأ المزيد <i class="fas fa-arrow-left"></i>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="no-results" id="noResults" style="display: none;">
+            <i class="fas fa-search"></i>
+            <h3>لا توجد أخبار في هذا القسم</h3>
+            <p>جرب تصفح الأقسام الأخرى</p>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn"><i class="fas fa-chevron-left"></i></button>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="newsletter-container fade-in">
+            <h2>اشترك في <span>نشرتنا الإخبارية</span></h2>
+            <p>كن أول من يعلم بأحدث العروض والأخبار العقارية الحصرية مباشرة إلى بريدك</p>
+            <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                <input type="email" placeholder="أدخل بريدك الإلكتروني" required>
+                <button type="submit">اشترك الآن</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- News Detail Modal -->
+    <div class="modal-overlay" id="newsModal" onclick="closeModalOnOverlay(event)">
+        <div class="modal-container" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="modal-image">
+                <img id="modalImage" src="" alt="News">
+                <div class="modal-image-overlay">
+                    <span class="modal-category" id="modalCategory">مقال</span>
+                    <h2 id="modalTitle">عنوان الخبر</h2>
+                </div>
+            </div>
+
+            <div class="modal-content">
+                <div class="modal-meta">
+                    <div class="modal-meta-item">
+                        <i class="far fa-calendar-alt"></i>
+                        <span id="modalDate">التاريخ</span>
+                    </div>
+                    <div class="modal-meta-item">
+                        <i class="far fa-user"></i>
+                        <span id="modalAuthor">فريق التحرير</span>
+                    </div>
+                    <div class="modal-meta-item">
+                        <i class="far fa-eye"></i>
+                        <span id="modalViews">1,245 مشاهدة</span>
+                    </div>
+                </div>
+
+                <div class="modal-body" id="modalBody">
+                    <!-- Content injected by JS -->
+                </div>
+
+                <div class="modal-share">
+                    <span class="modal-share-label">مشاركة الخبر:</span>
+                    <div class="share-buttons">
+                        <a href="#" class="share-btn"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="share-btn"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="share-btn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="share-btn"><i class="fab fa-whatsapp"></i></a>
+                        <button class="share-btn" onclick="copyLink()"><i class="fas fa-link"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="homepage.html" class="logo">
+                    <div class="logo-icon">L</div>
+                    <div class="logo-text">
+                        <span class="logo-text-ar">لافيدا ريالتي</span>
+                        <span class="logo-text-en">lavida-realty</span>
+                    </div>
+                </a>
+                <p>لافيدا ريالتي للعقارات - وجهتك الأولى للاستثمار العقاري المتميز في المملكة العربية السعودية</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="homepage.html">الرئيسية</a></li>
+                    <li><a href="projects.html">مشاريعنا</a></li>
+                    <li><a href="homepage.html#about">من نحن</a></li>
+                    <li><a href="programs.html">برامجنا</a></li>
+                    <li><a href="news.html">الأخبار</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>خدماتنا</h4>
+                <ul>
+                    <li><a href="#">البيع والشراء</a></li>
+                    <li><a href="#">التأجير</a></li>
+                    <li><a href="#">الاستثمار</a></li>
+                    <li><a href="#">التمويل العقاري</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>تواصل معنا</h4>
+                <ul>
+                    <li><a href="tel:920012345">9200 12345</a></li>
+                    <li><a href="mailto:info@naylalmakan.com">info@naylalmakan.com</a></li>
+                    <li><a href="#">الرياض، المملكة العربية السعودية</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2026 لافيدا ريالتي للعقارات. جميع الحقوق محفوظة</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+            document.querySelector('.overlay').classList.toggle('active');
+            document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('active') ? 'hidden' : '';
+        }
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(7, 11, 20, 0.92)';
+                navbar.style.boxShadow = '0 8px 32px rgba(0,0,0,0.35)';
+            } else {
+                navbar.style.background = 'rgba(7, 11, 20, 0.72)';
+                navbar.style.boxShadow = 'none';
+            }
+        });
+
+        // Fade In Animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Filter News
+        function filterNews(category, btn) {
+            // Update active button
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Filter cards
+            const cards = document.querySelectorAll('.news-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = '';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Show/hide no results
+            document.getElementById('noResults').style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        // News Data
+        const newsData = {
+            1: {
+                title: "كيف نصنع قيمة استثمارية حقيقية في ظل رؤية 2030؟",
+                image: "https://api.wealthconsulting.live/media/image/672e25f6131316cb1fdbe615.jpg",
+                category: "article",
+                categoryText: "مقال",
+                date: "15 أبريل 2026",
+                author: "د. أحمد القحطاني",
+                views: "2,340",
+                body: `
+                    <p>في بيئة تتسم بتقلب الطلب وارتفاع توقعات المستثمرين والمشترين، لا يتوقف دور المطوّر أو المستثمر عند تصميم مشروع جذاب بل يتحول إلى قيادة منظومة خدماتٍ تُترجم الرؤية إلى قيمة قابلة للقياس.</p>
+                    <h3>أربع ركائز للقيمة الاستثمارية</h3>
+                    <ul>
+                        <li><strong>إدارة استثمارات عقارية:</strong> دراسات جدوى وأهداف حقيقية تضمن عوائد مستدامة</li>
+                        <li><strong>تسويق احترافي:</strong> يوصل عقارك للمشتري الصحيح في الوقت المناسب</li>
+                        <li><strong>حلول تمويلية:</strong> تتناسب مع إمكانياتك وقدراتك الاستثمارية</li>
+                        <li><strong>خدمة ما بعد البيع:</strong> علاقتنا معك لا تنتهي عند التوقيع</li>
+                    </ul>
+                    <p>في لافيدا ريالتي، نؤمن أن التملّك الناجح يبدأ برؤية واضحة، وتنفيذ احترافي، وتجربة عميل قائمة على الشفافية والثقة. نحن لا نبيع وحدات سكنية فحسب، بل نبني شراكات طويلة المدى مع عملائنا.</p>
+                    <p>مع تسارع مشاريع رؤية 2030، تتزايد الفرص الاستثمارية في القطاع العقاري السعودي. من مشروع نيوم إلى البحر الأحمر، ومن القدية إلى قطار الرياض، كل هذه المشاريع العملاقة تخلق بيئة استثمارية واعدة للعقار.</p>
+                `
+            },
+            2: {
+                title: "قسّطها بسعر الكاش - بداية فصل جديد في حياتك",
+                image: "https://realestatemarket.us.com/wp-content/uploads/2024/07/r-architecture-2gDwlIim3Uw-unsplash-1024x683.jpg",
+                category: "offer",
+                categoryText: "عرض",
+                date: "12 أبريل 2026",
+                author: "قسم التسويق",
+                views: "3,890",
+                body: `
+                    <p>احجز استشارتك اليوم ولتؤجل فرصتك لتتملك. مساحات تصل إلى 240 م² بأسعار تبدأ من 385 ألف ر.س مع خيارات سداد مرنة حتى 6 أعوام.</p>
+                    <h3>تفاصيل العرض</h3>
+                    <ul>
+                        <li>دفعة أولى 10% فقط</li>
+                        <li>أقساط شهرية تبدأ من 4,500 ر.س</li>
+                        <li>إعفاء من رسوم التسجيل</li>
+                        <li>ضمان 10 سنوات على الهيكل الإنشائي</li>
+                        <li>تسليم فوري لبعض الوحدات</li>
+                    </ul>
+                    <p>العرض ساري على مشاريع: النخبة السكني، الفيصلية الفاخر، والمروج السكنية. الكمية محدودة والأولوية للحجز المبكر.</p>
+                `
+            },
+            3: {
+                title: "لافيدا ريالتي توقع اتفاقية تعاون مشترك مع بنك الرياض",
+                image: "https://www.arabnews.com/sites/default/files/styles/n_670_395/public/2023/02/25/3697131-1487349433.jpg?itok=IqTZieQg",
+                category: "partnership",
+                categoryText: "شراكة",
+                date: "8 أبريل 2026",
+                author: "العلاقات العامة",
+                views: "1,560",
+                body: `
+                    <p>وقعت شركة لافيدا ريالتي للعقارات اتفاقية تعاون مشترك مع بنك الرياض، تهدف إلى تسهيل إجراءات التمويل العقاري لعملاء الشركة وتقديم حلول تمويلية متنوعة ومنافسة.</p>
+                    <h3>بنود الاتفاقية</h3>
+                    <ul>
+                        <li>تمويل يصل إلى 70% من قيمة العقار</li>
+                        <li>فترة سداد تصل إلى 25 سنة</li>
+                        <li>إجراءات ميسرة وموافقة سريعة</li>
+                        <li>خدمة عملاء مخصصة لعملاء لافيدا ريالتي</li>
+                    </ul>
+                    <p>تأتي هذه الاتفاقية في إطار استراتيجية لافيدا ريالتي لتوسيع شبكة شراكاتها مع المؤسسات المالية الرائدة في المملكة، بهدف تسهيل رحلة التملك لعملائها.</p>
+                `
+            },
+            4: {
+                title: "لافيدا ريالتي تحصد جائزة التميز في قطاع العقارات 2026",
+                image: "https://media.antonovich-design.ae/uploads/gallery/2022/8/antonovich-design-2022BTyf2ykmnxPU.jpg",
+                category: "award",
+                categoryText: "جائزة",
+                date: "2 أبريل 2026",
+                author: "العلاقات العامة",
+                views: "4,120",
+                body: `
+                    <p>حصلت شركة لافيدا ريالتي للعقارات على جائزة التميز في قطاع العقارات للعام 2026، وذلك خلال حفل توزيع جوائز الملك عبدالله للجودة والتميز.</p>
+                    <p>تأتي هذه الجائزة تقديراً لجهود الشركة المتميزة في تقديم حلول عقارية مبتكرة وخدمة عملاء استثنائية، ولالتزامها بأعلى معايير الجودة والاستدامة في مشاريعها.</p>
+                    <h3>معايير التقييم</h3>
+                    <ul>
+                        <li>الجودة والابتكار في المشاريع</li>
+                        <li>رضا العملاء والشركاء</li>
+                        <li>المسؤولية الاجتماعية والبيئية</li>
+                        <li>الأداء المالي والنمو المستدام</li>
+                    </ul>
+                `
+            },
+            5: {
+                title: "توقعات سوق العقار السعودي 2026: فرص وتحديات",
+                image: "https://assets.fixr.com/fixr-article2025-real_estate_stats-dark_value.png",
+                category: "article",
+                categoryText: "مقال",
+                date: "28 مارس 2026",
+                author: "م. خالد السبيعي",
+                views: "1,890",
+                body: `
+                    <p>شهد سوق العقار السعودي في الربع الأول من 2026 نمواً ملحوظاً مدفوعاً بمشاريع رؤية 2030 وارتفاع الطلب على الوحدات السكنية الفاخرة.</p>
+                    <h3>أبرز المؤشرات</h3>
+                    <ul>
+                        <li>نمو 15% في مبيعات الوحدات السكنية</li>
+                        <li>ارتفاع أسعار الأراضي في الرياض 8%</li>
+                        <li>زيادة الطلب على الوحدات الفاخرة في جدة</li>
+                        <li>توسع في مشاريع الإسكان الميسر</li>
+                    </ul>
+                    <p>مع استمرار تدفق الاستثمارات الأجنبية وتوسع المشاريع العملاقة، يتوقع الخبراء استمرار النمو الإيجابي للقطاع خلال السنوات القادمة.</p>
+                `
+            },
+            6: {
+                title: "توقيع اتفاقية مع البنك الأهلي السعودي SNB",
+                image: "https://theluxuryplaybook.com/wp-content/uploads/2023/11/Copy-of-The-Luxury-Playbook-Articles-3.png",
+                category: "partnership",
+                categoryText: "شراكة",
+                date: "20 مارس 2026",
+                author: "العلاقات العامة",
+                views: "1,230",
+                body: `
+                    <p>وقعت لافيدا ريالتي اتفاقية شراكة استراتيجية مع البنك الأهلي السعودي (SNB) لتقديم حلول تمويلية حصرية لعملاء الشركة.</p>
+                    <h3>مزايا الشراكة</h3>
+                    <ul>
+                        <li>موافقة مبدئية خلال 48 ساعة</li>
+                        <li>نسب ربح تنافسية</li>
+                        <li>تمويل يصل إلى 5 ملايين ر.س</li>
+                        <li>إعفاء من رسوم إدارية</li>
+                    </ul>
+                `
+            },
+            7: {
+                title: "مع لافيدا ريالتي، التملّك أصبح أقرب مما تتوقع",
+                image: "https://sumesshmenonassociates.com/wp-content/uploads/2023/09/living-room-furniture-banner-new.webp",
+                category: "offer",
+                categoryText: "عرض",
+                date: "15 مارس 2026",
+                author: "قسم التسويق",
+                views: "2,670",
+                body: `
+                    <p>امتلاك المسكن لم يعد قرارًا مؤجلًا، بل خطوة مدروسة نحو الاستقرار وبناء قيمة طويلة المدى.</p>
+                    <p>في لافيدا ريالتي نعمل على تقديم حلول سكنية تجمع بين:</p>
+                    <ul>
+                        <li>تصميم عملي يناسب احتياجات الأسرة</li>
+                        <li>مواقع مختارة بعناية قرب الخدمات</li>
+                        <li>خطط سداد مرنة مدعومة بحلول تمويلية موثوقة</li>
+                    </ul>
+                `
+            },
+            8: {
+                title: "لافيدا ريالتي تحصل على شهادة الجودة العالمية ISO 9001",
+                image: "https://www.elantechnology.com/wp-content/uploads/2018/04/ISO-9001-2015.jpg",
+                category: "award",
+                categoryText: "جائزة",
+                date: "5 مارس 2026",
+                author: "ضمان الجودة",
+                views: "980",
+                body: `
+                    <p>حصلت لافيدا ريالتي على شهادة نظام إدارة الجودة ISO 9001:2015، مما يعكس التزامها بأعلى معايير الجودة في جميع عملياتها وخدماتها.</p>
+                    <p>تغطي الشهادة جميع جوانب العمليات الداخلية بدءاً من التخطيط والتصميم وصولاً إلى خدمة ما بعد البيع، مع التركيز على تحسين مستمر ورضا العملاء.</p>
+                `
+            },
+            9: {
+                title: "كيف تدعم لافيدا ريالتي المستثمرين والمطوّرين؟",
+                image: "https://c8.alamy.com/comp/2RBFKM3/illuminated-during-the-night-modern-building-in-the-center-of-al-khobar-with-green-cactuses-in-the-foreground-saudi-arabia-2RBFKM3.jpg",
+                category: "article",
+                categoryText: "مقال",
+                date: "25 فبراير 2026",
+                author: "م. فهد العتيبي",
+                views: "1,450",
+                body: `
+                    <p>تقدم لافيدا ريالتي منظومة متكاملة من الخدمات لدعم المستثمرين والمطوّرين في رحلتهم العقارية:</p>
+                    <ul>
+                        <li><strong>إدارة استثمارات عقارية:</strong> دراسات جدوى وأهداف حقيقية</li>
+                        <li><strong>تسويق احترافي:</strong> يوصل عقارك للمشتري الصحيح</li>
+                        <li><strong>حلول تمويلية:</strong> تتناسب مع إمكانياتك</li>
+                        <li><strong>خدمة ما بعد البيع:</strong> علاقتنا معك لا تنتهي عند التوقيع</li>
+                    </ul>
+                `
+            }
+        };
+
+        // Modal Functions
+        function openModal(id) {
+            const data = newsData[id];
+            if (!data) return;
+
+            document.getElementById('modalImage').src = data.image;
+            document.getElementById('modalTitle').textContent = data.title;
+            document.getElementById('modalDate').textContent = data.date;
+            document.getElementById('modalAuthor').textContent = data.author;
+            document.getElementById('modalViews').textContent = data.views + ' مشاهدة';
+            document.getElementById('modalBody').innerHTML = data.body;
+
+            const catEl = document.getElementById('modalCategory');
+            catEl.textContent = data.categoryText;
+            catEl.className = 'modal-category ' + data.category;
+
+            document.getElementById('newsModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('newsModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function closeModalOnOverlay(e) {
+            if (e.target === e.currentTarget) closeModal();
+        }
+
+        // Copy Link
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                alert('تم نسخ رابط الخبر!');
+            });
+        }
+
+        // Newsletter
+        function subscribeNewsletter(e) {
+            e.preventDefault();
+            alert('شكراً لاشتراكك! ستصلك أحدث أخبارنا قريباً.');
+            e.target.reset();
+        }
+
+        // Close modal on Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
+</body>
+</html>

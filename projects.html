@@ -1,0 +1,826 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشاريعنا | لافيدا ريالتي - lavida-realty</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" aria-label="التنقل الرئيسي">
+        <div class="nav-container">
+            <a href="homepage.html" class="logo">
+                <div class="logo-icon">L</div>
+                <div class="logo-text">
+                    <span class="logo-text-ar">لافيدا ريالتي</span>
+                    <span class="logo-text-en">lavida-realty</span>
+                </div>
+            </a>
+
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="homepage.html">الرئيسية</a></li>
+                    <li><a href="projects.html" aria-current="page">مشاريعنا</a></li>
+                    <li><a href="homepage.html#about">من نحن</a></li>
+                    <li><a href="programs.html">برامجنا</a></li>
+                    <li><a href="news.html">الأخبار</a></li>
+                    <li><a href="about-us.html">تواصل معنا</a></li>
+                </ul>
+                <button type="button" class="btn-login" aria-label="تسجيل الدخول">
+                    <i class="fas fa-circle-user" aria-hidden="true"></i>
+                    تسجيل الدخول
+                </button>
+                <button type="button" class="mobile-menu-btn" onclick="toggleMenu()" aria-label="فتح القائمة">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="overlay" onclick="toggleMenu()"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" onclick="toggleMenu()">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="mobile-menu-links">
+            <li><a href="homepage.html" onclick="toggleMenu()">الرئيسية</a></li>
+            <li><a href="projects.html" onclick="toggleMenu()">مشاريعنا</a></li>
+            <li><a href="homepage.html#about" onclick="toggleMenu()">من نحن</a></li>
+            <li><a href="programs.html" onclick="toggleMenu()">برامجنا</a></li>
+            <li><a href="news.html" onclick="toggleMenu()">الأخبار</a></li>
+            <li><a href="about-us.html" onclick="toggleMenu()">تواصل معنا</a></li>
+        </ul>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1>مشاريعنا <span>العقارية</span></h1>
+            <p>اكتشف مجموعة مختارة من أرقى المشاريع السكنية والاستثمارية في المملكة</p>
+            <div class="breadcrumb">
+                <a href="homepage.html">الرئيسية</a>
+                <i class="fas fa-chevron-left"></i>
+                <span>المشاريع العقارية</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="filters-section">
+        <div class="filters-container">
+            <div class="filter-group">
+                <span class="filter-label">التصنيف:</span>
+                <button class="filter-btn active" onclick="filterProjects('all', this)">الكل</button>
+                <button class="filter-btn" onclick="filterProjects('sale', this)">للبيع</button>
+                <button class="filter-btn" onclick="filterProjects('rent', this)">للإيجار</button>
+            </div>
+            <div class="filter-group">
+                <span class="filter-label">المدينة:</span>
+                <button class="filter-btn active" onclick="filterCity('all', this)">الكل</button>
+                <button class="filter-btn" onclick="filterCity('riyadh', this)">الرياض</button>
+                <button class="filter-btn" onclick="filterCity('jeddah', this)">جدة</button>
+                <button class="filter-btn" onclick="filterCity('dammam', this)">الدمام</button>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="ابحث عن مشروع..." id="searchInput" onkeyup="searchProjects()">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="projects-section">
+        <div class="projects-grid" id="projectsGrid">
+            <!-- Project 1 -->
+            <div class="project-card fade-in" data-type="sale" data-city="riyadh" onclick="openModal(1)">
+                <div class="project-image">
+                    <img src="https://thumbs.dreamstime.com/b/luxury-penthouse-terrace-overlooking-cityscape-night-modern-design-elegant-rooftop-terrace-luxury-penthouse-featuring-368340204.jpg" alt="برج النخبة">
+                    <span class="project-badge">للبيع</span>
+                    <button class="project-favorite" onclick="event.stopPropagation(); toggleFavorite(this)">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+                <div class="project-info">
+                    <div class="project-type"><i class="fas fa-building"></i> سكني فاخر</div>
+                    <h3 class="project-title">برج النخبة السكني</h3>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        الرياض - حي الياسمين
+                    </div>
+                    <div class="project-specs">
+                        <div class="project-spec"><i class="fas fa-bed"></i> 3-5 غرف</div>
+                        <div class="project-spec"><i class="fas fa-ruler-combined"></i> 150-400 م²</div>
+                    </div>
+                    <div class="project-footer">
+                        <div class="project-price">1,200,000 <span>ر.س</span></div>
+                        <button class="project-details-btn">التفاصيل</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card fade-in" data-type="sale" data-city="jeddah" onclick="openModal(2)">
+                <div class="project-image">
+                    <img src="https://cdn9.dissolve.com/p/D1007_4_333/D1007_4_333_1200.jpg" alt="فلل الفيصلية">
+                    <span class="project-badge">للبيع</span>
+                    <button class="project-favorite" onclick="event.stopPropagation(); toggleFavorite(this)">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+                <div class="project-info">
+                    <div class="project-type"><i class="fas fa-home"></i> فلل فاخرة</div>
+                    <h3 class="project-title">فلل الفيصلية الفاخرة</h3>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        جدة - حي الشاطئ
+                    </div>
+                    <div class="project-specs">
+                        <div class="project-spec"><i class="fas fa-bed"></i> 5-7 غرف</div>
+                        <div class="project-spec"><i class="fas fa-ruler-combined"></i> 400-800 م²</div>
+                    </div>
+                    <div class="project-footer">
+                        <div class="project-price">2,500,000 <span>ر.س</span></div>
+                        <button class="project-details-btn">التفاصيل</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card fade-in" data-type="sale" data-city="dammam" onclick="openModal(3)">
+                <div class="project-image">
+                    <img src="https://thumbs.dreamstime.com/b/modern-apartment-living-room-overlooking-night-city-skyline-blue-tone-contemporary-interior-offers-stunning-views-391061718.jpg" alt="أبراج المروج">
+                    <span class="project-badge">للبيع</span>
+                    <button class="project-favorite" onclick="event.stopPropagation(); toggleFavorite(this)">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+                <div class="project-info">
+                    <div class="project-type"><i class="fas fa-building"></i> شقق سكنية</div>
+                    <h3 class="project-title">أبراج المروج السكنية</h3>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        الدمام - حي النور
+                    </div>
+                    <div class="project-specs">
+                        <div class="project-spec"><i class="fas fa-bed"></i> 2-4 غرف</div>
+                        <div class="project-spec"><i class="fas fa-ruler-combined"></i> 120-280 م²</div>
+                    </div>
+                    <div class="project-footer">
+                        <div class="project-price">890,000 <span>ر.س</span></div>
+                        <button class="project-details-btn">التفاصيل</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card fade-in" data-type="rent" data-city="riyadh" onclick="openModal(4)">
+                <div class="project-image">
+                    <img src="https://www.shutterstock.com/image-photo/new-modern-block-flats-green-600nw-2667743883.jpg" alt="واحة الرياض">
+                    <span class="project-badge" style="background: var(--success);">للإيجار</span>
+                    <button class="project-favorite" onclick="event.stopPropagation(); toggleFavorite(this)">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+                <div class="project-info">
+                    <div class="project-type"><i class="fas fa-city"></i> مجمع سكني</div>
+                    <h3 class="project-title">واحة الرياض 2</h3>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        الرياض - حي الملقا
+                    </div>
+                    <div class="project-specs">
+                        <div class="project-spec"><i class="fas fa-bed"></i> 1-3 غرف</div>
+                        <div class="project-spec"><i class="fas fa-ruler-combined"></i> 80-200 م²</div>
+                    </div>
+                    <div class="project-footer">
+                        <div class="project-price">4,500 <span>ر.س/شهر</span></div>
+                        <button class="project-details-btn">التفاصيل</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-card fade-in" data-type="sale" data-city="jeddah" onclick="openModal(5)">
+                <div class="project-image">
+                    <img src="https://thumbs.dreamstime.com/b/luxury-penthouse-terrace-panoramic-cityscape-view-night-modern-balcony-featuring-cozy-fire-pits-city-skyline-369179495.jpg" alt="كورنيش جدة">
+                    <span class="project-badge">للبيع</span>
+                    <button class="project-favorite" onclick="event.stopPropagation(); toggleFavorite(this)">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+                <div class="project-info">
+                    <div class="project-type"><i class="fas fa-water"></i> فيلات بحرية</div>
+                    <h3 class="project-title">كورنيش جدة الفاخر</h3>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        جدة - كورنيش جدة
+                    </div>
+                    <div class="project-specs">
+                        <div class="project-spec"><i class="fas fa-bed"></i> 4-6 غرف</div>
+                        <div class="project-spec"><i class="fas fa-ruler-combined"></i> 350-600 م²</div>
+                    </div>
+                    <div class="project-footer">
+                        <div class="project-price">3,800,000 <span>ر.س</span></div>
+                        <button class="project-details-btn">التفاصيل</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="project-card fade-in" data-type="rent" data-city="dammam" onclick="openModal(6)">
+                <div class="project-image">
+                    <img src="https://www.theluxurysignature.com/wp-content/uploads/2024/12/Villa-Amann-Phuket-Pool-Area-5.jpg" alt="النخيل الدمام">
+                    <span class="project-badge" style="background: var(--success);">للإيجار</span>
+                    <button class="project-favorite" onclick="event.stopPropagation(); toggleFavorite(this)">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+                <div class="project-info">
+                    <div class="project-type"><i class="fas fa-umbrella-beach"></i> منتجع سكني</div>
+                    <h3 class="project-title">منتجع النخيل الدمام</h3>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        الدمام - حي الشاطئ
+                    </div>
+                    <div class="project-specs">
+                        <div class="project-spec"><i class="fas fa-bed"></i> 3-5 غرف</div>
+                        <div class="project-spec"><i class="fas fa-ruler-combined"></i> 200-450 م²</div>
+                    </div>
+                    <div class="project-footer">
+                        <div class="project-price">8,000 <span>ر.س/شهر</span></div>
+                        <button class="project-details-btn">التفاصيل</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="no-results" id="noResults" style="display: none;">
+            <i class="fas fa-search"></i>
+            <h3>لا توجد نتائج</h3>
+            <p>جرب البحث بكلمات مختلفة أو تغيير الفلاتر</p>
+        </div>
+    </section>
+
+    <!-- Property Detail Modal -->
+    <div class="modal-overlay" id="propertyModal" onclick="closeModalOnOverlay(event)">
+        <div class="modal-container" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="modal-gallery">
+                <img id="modalMainImage" src="" alt="Property">
+                <div class="modal-gallery-overlay">
+                    <span class="modal-gallery-badge" id="modalBadge">للبيع</span>
+                    <h2 id="modalTitle">عنوان المشروع</h2>
+                    <div class="modal-gallery-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span id="modalLocation">الموقع</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-thumbnails" id="modalThumbnails">
+                <!-- Thumbnails injected by JS -->
+            </div>
+
+            <div class="modal-content">
+                <div class="modal-grid">
+                    <div class="modal-main">
+                        <div class="modal-section">
+                            <h3><i class="fas fa-info-circle"></i> نبذة عن المشروع</h3>
+                            <p id="modalDescription">وصف المشروع يظهر هنا...</p>
+                        </div>
+
+                        <div class="modal-section">
+                            <h3><i class="fas fa-list-ul"></i> المميزات والمواصفات</h3>
+                            <ul class="feature-list" id="modalFeatures">
+                                <!-- Features injected by JS -->
+                            </ul>
+                        </div>
+
+                        <div class="modal-section">
+                            <h3><i class="fas fa-th-large"></i> المساحات المتاحة</h3>
+                            <div class="info-grid" id="modalSpecs">
+                                <!-- Specs injected by JS -->
+                            </div>
+                        </div>
+
+                        <div class="modal-section">
+                            <h3><i class="fas fa-drafting-compass"></i> مخططات الوحدات</h3>
+                            <div class="floor-plans" id="modalFloorPlans">
+                                <!-- Floor plans injected by JS -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-sidebar">
+                        <div class="modal-price">
+                            <div class="modal-price-label">السعر يبدأ من</div>
+                            <div class="modal-price-value" id="modalPrice">0</div>
+                            <div class="modal-price-unit" id="modalPriceUnit">ر.س</div>
+                        </div>
+
+                        <form class="contact-form" onsubmit="submitForm(event)">
+                            <input type="text" placeholder="الاسم الكامل" required>
+                            <input type="tel" placeholder="رقم الجوال" required>
+                            <input type="email" placeholder="البريد الإلكتروني">
+                            <select>
+                                <option value="">نوع الاستفسار</option>
+                                <option value="visit">حجز موعد زيارة</option>
+                                <option value="info">طلب معلومات إضافية</option>
+                                <option value="finance">استشارة تمويلية</option>
+                            </select>
+                            <textarea rows="3" placeholder="ملاحظات إضافية..."></textarea>
+                            <button type="submit">
+                                <i class="fas fa-paper-plane"></i> إرسال الطلب
+                            </button>
+                        </form>
+
+                        <div style="margin-top: 1.5rem; text-align: center;">
+                            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.5rem;">أو تواصل مباشرة</p>
+                            <a href="tel:920012345" style="color: var(--accent-gold); text-decoration: none; font-weight: 700; font-size: 1.1rem;">
+                                <i class="fas fa-phone"></i> 9200 12345
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="homepage.html" class="logo">
+                    <div class="logo-icon">L</div>
+                    <div class="logo-text">
+                        <span class="logo-text-ar">لافيدا ريالتي</span>
+                        <span class="logo-text-en">lavida-realty</span>
+                    </div>
+                </a>
+                <p>لافيدا ريالتي للعقارات - وجهتك الأولى للاستثمار العقاري المتميز في المملكة العربية السعودية</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="homepage.html">الرئيسية</a></li>
+                    <li><a href="projects.html">مشاريعنا</a></li>
+                    <li><a href="homepage.html#about">من نحن</a></li>
+                    <li><a href="programs.html">برامجنا</a></li>
+                    <li><a href="news.html">الأخبار</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>خدماتنا</h4>
+                <ul>
+                    <li><a href="#">البيع والشراء</a></li>
+                    <li><a href="#">التأجير</a></li>
+                    <li><a href="#">الاستثمار</a></li>
+                    <li><a href="#">التمويل العقاري</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>تواصل معنا</h4>
+                <ul>
+                    <li><a href="tel:920012345">9200 12345</a></li>
+                    <li><a href="mailto:info@naylalmakan.com">info@naylalmakan.com</a></li>
+                    <li><a href="#">الرياض، المملكة العربية السعودية</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2026 لافيدا ريالتي للعقارات. جميع الحقوق محفوظة</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Project Data
+        const projectsData = {
+            1: {
+                title: "برج النخبة السكني",
+                location: "الرياض - حي الياسمين",
+                badge: "للبيع",
+                badgeColor: "var(--accent-gold)",
+                mainImage: "https://thumbs.dreamstime.com/b/luxury-penthouse-terrace-overlooking-cityscape-night-modern-design-elegant-rooftop-terrace-luxury-penthouse-featuring-368340204.jpg",
+                thumbnails: [
+                    "https://thumbs.dreamstime.com/b/luxury-penthouse-terrace-overlooking-cityscape-night-modern-design-elegant-rooftop-terrace-luxury-penthouse-featuring-368340204.jpg",
+                    "https://thumbs.dreamstime.com/b/modern-apartment-living-room-overlooking-night-city-skyline-blue-tone-contemporary-interior-offers-stunning-views-391061718.jpg",
+                    "https://cdn9.dissolve.com/p/D1007_4_333/D1007_4_333_1200.jpg",
+                    "https://www.shutterstock.com/image-photo/new-modern-block-flats-green-600nw-2667743883.jpg"
+                ],
+                description: "برج النخبة السكني هو أحد أرقى المشاريع السكنية في حي الياسمين بالرياض. يتميز التصميم العصري الفاخر والإطلالات البانورامية على المدينة. يوفر المشروع وحدات سكنية متنوعة تتراوح بين الشقق الفاخرة والبنتهاوسات مع مرافق عالمية المستوى تشمل مسبحاً ونادياً رياضياً ومناطق ترفيهية.",
+                features: [
+                    "موقف سيارات خاص لكل وحدة",
+                    "مسبح خارجي وآخر داخلي",
+                    "نادي رياضي مجهز بالكامل",
+                    "أمن وحراسة 24 ساعة",
+                    "مساحات خضراء وحدائق",
+                    "قاعة اجتماعات ومناسبات",
+                    "خدمات تنظيف وصيانة",
+                    "نظام ذكي للمنازل"
+                ],
+                specs: [
+                    { label: "عدد الوحدات", value: "120 وحدة" },
+                    { label: "المساحات", value: "150 - 400 م²" },
+                    { label: "الغرف", value: "3 - 5 غرف" },
+                    { label: "الدور", value: "G + 20" },
+                    { label: "تاريخ التسليم", value: "Q4 2026" },
+                    { label: "الضمان", value: "10 سنوات" }
+                ],
+                floorPlans: [
+                    { name: "3 غرف", area: "150 م²", icon: "fa-bed" },
+                    { name: "4 غرف", area: "220 م²", icon: "fa-bed" },
+                    { name: "5 غرف", area: "300 م²", icon: "fa-bed" },
+                    { name: "بنتهاوس", area: "400 م²", icon: "fa-crown" }
+                ],
+                price: "1,200,000",
+                priceUnit: "ر.س"
+            },
+            2: {
+                title: "فلل الفيصلية الفاخرة",
+                location: "جدة - حي الشاطئ",
+                badge: "للبيع",
+                badgeColor: "var(--accent-gold)",
+                mainImage: "https://cdn9.dissolve.com/p/D1007_4_333/D1007_4_333_1200.jpg",
+                thumbnails: [
+                    "https://cdn9.dissolve.com/p/D1007_4_333/D1007_4_333_1200.jpg",
+                    "https://www.theluxurysignature.com/wp-content/uploads/2024/12/Villa-Amann-Phuket-Pool-Area-5.jpg",
+                    "https://thumbs.dreamstime.com/b/luxury-penthouse-terrace-panoramic-cityscape-view-night-modern-balcony-featuring-cozy-fire-pits-city-skyline-369179495.jpg",
+                    "https://www.shutterstock.com/image-photo/new-modern-block-flats-green-600nw-2667743883.jpg"
+                ],
+                description: "فلل الفيصلية الفاخرة هي مجمع فيلات مستقل يقع في أرقى أحياء جدة. يتميز كل فيلا بتصميم معماري فريد وحدائق خاصة ومسبح. المشروع يوفر خصوصية تامة وأجواء عائلية راقية مع إطلالات بحرية خلابة.",
+                features: [
+                    "فيلا مستقلة لكل وحدة",
+                    "مسبح خاص لكل فيلا",
+                    "حديقة خاصة",
+                    "جراج لسيارتين",
+                    "غرفة خادمة وغرفة سائق",
+                    "مطبخ خارجي ومنطقة شواء",
+                    "نظام أمني متكامل",
+                    "إطلالة بحرية"
+                ],
+                specs: [
+                    { label: "عدد الفلل", value: "45 فيلا" },
+                    { label: "المساحات", value: "400 - 800 م²" },
+                    { label: "الغرف", value: "5 - 7 غرف" },
+                    { label: "الأدوار", value: "3 أدوار" },
+                    { label: "تاريخ التسليم", value: "Q2 2027" },
+                    { label: "الضمان", value: "15 سنة" }
+                ],
+                floorPlans: [
+                    { name: "فيلا A", area: "400 م²", icon: "fa-home" },
+                    { name: "فيلا B", area: "550 م²", icon: "fa-home" },
+                    { name: "فيلا C", area: "700 م²", icon: "fa-home" },
+                    { name: "فيلا D", area: "800 م²", icon: "fa-home" }
+                ],
+                price: "2,500,000",
+                priceUnit: "ر.س"
+            },
+            3: {
+                title: "أبراج المروج السكنية",
+                location: "الدمام - حي النور",
+                badge: "للبيع",
+                badgeColor: "var(--accent-gold)",
+                mainImage: "https://thumbs.dreamstime.com/b/modern-apartment-living-room-overlooking-night-city-skyline-blue-tone-contemporary-interior-offers-stunning-views-391061718.jpg",
+                thumbnails: [
+                    "https://thumbs.dreamstime.com/b/modern-apartment-living-room-overlooking-night-city-skyline-blue-tone-contemporary-interior-offers-stunning-views-391061718.jpg",
+                    "https://thumbs.dreamstime.com/b/luxury-penthouse-terrace-overlooking-cityscape-night-modern-design-elegant-rooftop-terrace-luxury-penthouse-featuring-368340204.jpg",
+                    "https://www.shutterstock.com/image-photo/new-modern-block-flats-green-600nw-2667743883.jpg",
+                    "https://cdn9.dissolve.com/p/D1007_4_333/D1007_4_333_1200.jpg"
+                ],
+                description: "أبراج المروج السكنية هو مجمع متكامل يضم 4 أبراج سكنية في قلب الدمام. يوفر المشروع وحدات سكنية عصرية بتصاميم عملية تناسب العائلات الشابة والمستثمرين على حد سواء.",
+                features: [
+                    "4 أبراج سكنية",
+                    "منطقة تجارية",
+                    "حضانة أطفال",
+                    "ملاعب رياضية",
+                    "ممرات للمشي والركض",
+                    "مواقف سيارات underground",
+                    "مصاعد عالية السرعة",
+                    "نظام طاقة شمسية"
+                ],
+                specs: [
+                    { label: "عدد الوحدات", value: "300 وحدة" },
+                    { label: "المساحات", value: "120 - 280 م²" },
+                    { label: "الغرف", value: "2 - 4 غرف" },
+                    { label: "الأدوار", value: "G + 15" },
+                    { label: "تاريخ التسليم", value: "Q1 2027" },
+                    { label: "الضمان", value: "10 سنوات" }
+                ],
+                floorPlans: [
+                    { name: "2 غرفة", area: "120 م²", icon: "fa-bed" },
+                    { name: "3 غرف", area: "180 م²", icon: "fa-bed" },
+                    { name: "3 غرف كبير", area: "220 م²", icon: "fa-bed" },
+                    { name: "4 غرف", area: "280 م²", icon: "fa-bed" }
+                ],
+                price: "890,000",
+                priceUnit: "ر.س"
+            },
+            4: {
+                title: "واحة الرياض 2",
+                location: "الرياض - حي الملقا",
+                badge: "للإيجار",
+                badgeColor: "var(--success)",
+                mainImage: "https://www.shutterstock.com/image-photo/new-modern-block-flats-green-600nw-2667743883.jpg",
+                thumbnails: [
+                    "https://www.shutterstock.com/image-photo/new-modern-block-flats-green-600nw-2667743883.jpg",
+                    "https://thumbs.dreamstime.com/b/modern-apartment-living-room-overlooking-night-city-skyline-blue-tone-contemporary-interior-offers-stunning-views-391061718.jpg",
+                    "https://cdn9.dissolve.com/p/D1007_4_333/D1007_4_333_1200.jpg",
+                    "https://www.theluxurysignature.com/wp-content/uploads/2024/12/Villa-Amann-Phuket-Pool-Area-5.jpg"
+                ],
+                description: "واحة الرياض 2 هو مجمع سكني للإيجار يقع في حي الملقا الراقي. يوفر شققاً مفروشة وغير مفروشة بأسعار تنافسية مع خدمات متميزة تناسب الموظفين والعائلات.",
+                features: [
+                    "شقق مفروشة وغير مفروشة",
+                    "صيانة دورية مجانية",
+                    "خدمة استقبال 24 ساعة",
+                    "مسبح مشترك",
+                    "صالة رياضية",
+                    "موقف سيارات مغطى",
+                    "إنترنت فايبر مجاني",
+                    "تنظيف أسبوعي"
+                ],
+                specs: [
+                    { label: "عدد الوحدات", value: "80 وحدة" },
+                    { label: "المساحات", value: "80 - 200 م²" },
+                    { label: "الغرف", value: "1 - 3 غرف" },
+                    { label: "الأدوار", value: "G + 8" },
+                    { label: "مدة الإيجار", value: "1 - 3 سنوات" },
+                    { label: "الضمان", value: "6 أشهر" }
+                ],
+                floorPlans: [
+                    { name: "1 غرفة", area: "80 م²", icon: "fa-bed" },
+                    { name: "2 غرف", area: "120 م²", icon: "fa-bed" },
+                    { name: "3 غرف", area: "160 م²", icon: "fa-bed" },
+                    { name: "4 غرف", area: "200 م²", icon: "fa-bed" }
+                ],
+                price: "1,200",
+                priceUnit: "ر.س/شهر"
+            },
+            5: {
+                title: "برج الملك عبد العزيز السكني",
+                location: "جدة - حي الشاطئ",
+                badge: "للبيع",
+                badgeColor: "var(--accent-gold)",
+                mainImage: "https://cdn9.dissolve.com/p/D1007_4_333/D1007_4_333_1200.jpg",
+                thumbnails: [
+                    "https://cdn9.dissolve.com/p/D1007_4_333/D1007_4_333_1200.jpg",
+                    "https://www.theluxurysignature.com/wp-content/uploads/2024/12/Villa-Amann-Phuket-Pool-Area-5.jpg",
+                    "https://thumbs.dreamstime.com/b/luxury-penthouse-terrace-overlooking-cityscape-night-modern-design-elegant-rooftop-terrace-luxury-penthouse-featuring-368340204.jpg",
+                    "https://www.shutterstock.com/image-photo/new-modern-block-flats-green-600nw-2667743883.jpg"
+                ],
+                description: "برج الملك عبد العزيز السكني هو مجمع سكني للبيع يقع في حي الشاطئ الجديد. يوفر شققاً مفروشة وغير مفروشة بأسعار تنافسية مع خدمات متميزة تناسب العائلات والمستثمرين.",
+                features: [
+                    "شقق مفروشة وغير مفروشة",
+                    "صيانة دورية مجانية",
+                    "خدمة استقبال 24 ساعة",
+                    "مسبح مشترك",
+                    "صالة رياضية",
+                    "موقف سيارات مغطى",
+                    "إنترنت فايبر مجاني",
+                    "تنظيف أسبوعي"
+                ],
+                specs: [
+                    { label: "عدد الوحدات", value: "120 وحدة" },
+                    { label: "المساحات", value: "120 - 300 م²" },
+                    { label: "الغرف", value: "2 - 5 غرف" },
+                    { label: "الأدوار", value: "G + 12" },
+                    { label: "تاريخ التسليم", value: "Q3 2027" },
+                    { label: "الضمان", value: "10 سنوات" }
+                ],
+                floorPlans: [
+                    { name: "2 غرف", area: "120 م²", icon: "fa-bed" },
+                    { name: "3 غرف", area: "180 م²", icon: "fa-bed" },
+                    { name: "4 غرف", area: "240 م²", icon: "fa-bed" },
+                    { name: "5 غرف", area: "300 م²", icon: "fa-bed" }
+                ],
+                price: "1,500,000",
+                priceUnit: "ر.س"
+            },
+            6: {
+                title: "برج الملك عبد العزيز السكني",
+                location: "جدة - حي الشاطئ",
+                badge: "للبيع",
+                badgeColor: "var(--accent-gold)",
+                mainImage: "https://cdn9.dissolve.com/p/D1007_4_333/D1007_4_333_1200.jpg",  
+                thumbnails: [
+                    "https://cdn9.dissolve.com/p/D1007_4_333/D1007_4_333_1200.jpg",
+                    "https://www.theluxurysignature.com/wp-content/uploads/2024/12/Villa-Amann-Phuket-Pool-Area-5.jpg",
+                    "https://thumbs.dreamstime.com/b/luxury-penthouse-terrace-overlooking-cityscape-night-modern-design-elegant-rooftop-terrace-luxury-penthouse-featuring-368340204.jpg",
+                    "https://www.shutterstock.com/image-photo/new-modern-block-flats-green-600nw-2667743883.jpg"
+                ],
+                description: "برج الملك عبد العزيز السكني هو مجمع سكني للبيع يقع في حي الشاطئ الجديد. يوفر شققاً مفروشة وغير مفروشة بأسعار تنافسية مع خدمات متميزة تناسب العائلات والمستثمرين.",
+                features: [
+                    "شقق مفروشة وغير مفروشة",
+                    "صيانة دورية مجانية",
+                    "خدمة استقبال 24 ساعة",
+                    "مسبح مشترك",
+                    "صالة رياضية",
+                    "موقف سيارات مغطى",
+                    "إنترنت فايبر مجاني",
+                    "تنظيف أسبوعي"
+                ],
+                specs: [
+                    { label: "عدد الوحدات", value: "120 وحدة" },
+                    { label: "المساحات", value: "120 - 300 م²" },
+                    { label: "الغرف", value: "2 - 5 غرف" },
+                    { label: "الأدوار", value: "G + 12" },
+                    { label: "تاريخ التسليم", value: "Q3 2027" },
+                    { label: "الضمان", value: "10 سنوات" }
+                ],
+                floorPlans: [
+                    { name: "2 غرف", area: "120 م²", icon: "fa-bed" },
+                    { name: "3 غرف", area: "180 م²", icon: "fa-bed" },
+                    { name: "4 غرف", area: "240 م²", icon: "fa-bed" },
+                    { name: "5 غرف", area: "300 م²", icon: "fa-bed" }
+                ],
+                price: "1,500,000",
+                priceUnit: "ر.س"
+            }
+        };
+
+        let currentTypeFilter = 'all';
+        let currentCityFilter = 'all';
+
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const overlay = document.querySelector('.overlay');
+            menu.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        function setActiveFilterButton(button) {
+            const group = button.closest('.filter-group');
+            if (!group) {
+                return;
+            }
+            group.querySelectorAll('.filter-btn').forEach((b) => b.classList.remove('active'));
+            button.classList.add('active');
+        }
+
+        function filterProjects(type, button) {
+            setActiveFilterButton(button);
+            currentTypeFilter = type;
+            applyProjectFilters();
+        }
+
+        function filterCity(city, button) {
+            setActiveFilterButton(button);
+            currentCityFilter = city;
+            applyProjectFilters();
+        }
+
+        function applyProjectFilters() {
+            const grid = document.getElementById('projectsGrid');
+            const noResults = document.getElementById('noResults');
+            const searchRaw = (document.getElementById('searchInput').value || '').trim();
+            const cards = grid.querySelectorAll('.project-card');
+            let visibleCount = 0;
+
+            cards.forEach((card) => {
+                const typeOk =
+                    currentTypeFilter === 'all' || card.getAttribute('data-type') === currentTypeFilter;
+                const cityOk =
+                    currentCityFilter === 'all' || card.getAttribute('data-city') === currentCityFilter;
+                const titleEl = card.querySelector('.project-title');
+                const titleText = titleEl ? titleEl.textContent.trim() : '';
+                const searchOk =
+                    searchRaw.length === 0 ||
+                    titleText.includes(searchRaw) ||
+                    titleText.toLowerCase().includes(searchRaw.toLowerCase());
+
+                const show = typeOk && cityOk && searchOk;
+                card.style.display = show ? '' : 'none';
+                if (show) {
+                    visibleCount += 1;
+                }
+            });
+
+            noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        function searchProjects() {
+            applyProjectFilters();
+        }
+
+        function openModal(projectId) {
+            const data = projectsData[projectId];
+            if (!data) {
+                return;
+            }
+
+            document.getElementById('modalMainImage').src = data.mainImage;
+            const badgeEl = document.getElementById('modalBadge');
+            badgeEl.textContent = data.badge;
+            badgeEl.style.background = data.badgeColor || 'var(--accent-gold)';
+
+            document.getElementById('modalTitle').textContent = data.title;
+            document.getElementById('modalLocation').textContent = data.location;
+            document.getElementById('modalDescription').textContent = data.description;
+            document.getElementById('modalPrice').textContent = data.price;
+            document.getElementById('modalPriceUnit').textContent = data.priceUnit;
+
+            const featuresEl = document.getElementById('modalFeatures');
+            featuresEl.innerHTML = data.features
+                .map(
+                    (f) =>
+                        `<li><i class="fas fa-check-circle"></i><span>${f}</span></li>`
+                )
+                .join('');
+
+            const specsEl = document.getElementById('modalSpecs');
+            specsEl.innerHTML = data.specs
+                .map(
+                    (s) =>
+                        `<div class="info-item"><div class="info-item-label">${s.label}</div><div class="info-item-value">${s.value}</div></div>`
+                )
+                .join('');
+
+            const floorEl = document.getElementById('modalFloorPlans');
+            floorEl.innerHTML = data.floorPlans
+                .map(
+                    (fp) =>
+                        `<div class="floor-plan-card"><i class="fas ${fp.icon}"></i><h4>${fp.name}</h4><p>${fp.area}</p></div>`
+                )
+                .join('');
+
+            const thumbsEl = document.getElementById('modalThumbnails');
+            thumbsEl.innerHTML = '';
+            data.thumbnails.forEach((src, index) => {
+                const wrap = document.createElement('div');
+                wrap.className = 'modal-thumbnail' + (index === 0 ? ' active' : '');
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = '';
+                wrap.appendChild(img);
+                wrap.addEventListener('click', () => {
+                    document.querySelectorAll('.modal-thumbnail').forEach((t) => t.classList.remove('active'));
+                    wrap.classList.add('active');
+                    document.getElementById('modalMainImage').src = src;
+                });
+                thumbsEl.appendChild(wrap);
+            });
+
+            document.getElementById('propertyModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('propertyModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function closeModalOnOverlay(event) {
+            if (event.target === event.currentTarget) {
+                closeModal();
+            }
+        }
+
+        function toggleFavorite(button) {
+            button.classList.toggle('active');
+            const icon = button.querySelector('i');
+            if (!icon) {
+                return;
+            }
+            icon.classList.toggle('far');
+            icon.classList.toggle('fas');
+        }
+
+        function submitForm(event) {
+            event.preventDefault();
+            window.alert('تم استلام طلبك بنجاح. سيتواصل معك فريق المبيعات قريباً.');
+        }
+
+        const fadeInObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            },
+            { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+        );
+
+        document.querySelectorAll('.fade-in').forEach((el) => fadeInObserver.observe(el));
+    </script>
+</body>
+</html>
