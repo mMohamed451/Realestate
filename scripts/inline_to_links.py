@@ -7,7 +7,7 @@ LINK_INNER = '    <link rel="stylesheet" href="css/main.css">\n    <link rel="st
 
 
 def main() -> None:
-    hp = ROOT / "homepage.html"
+    hp = ROOT / "index.html"
     t = hp.read_text(encoding="utf-8")
     t = re.sub(r"<style>.*?</style>", LINK_HOME, t, count=1, flags=re.S)
     hp.write_text(t, encoding="utf-8")
