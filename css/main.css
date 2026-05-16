@@ -1274,9 +1274,6 @@
                 gap: 0.4rem;
             }
             
-            .hero h1 { font-size: 2rem; }
-            .hero p { font-size: 1rem; }
-            
             .projects-grid { grid-template-columns: 1fr; }
             .vision-grid { grid-template-columns: 1fr; }
             .values-grid { grid-template-columns: 1fr; }
@@ -1306,9 +1303,7 @@
         }
 
         @media (max-width: 480px) {
-            .hero h1 { font-size: 1.6rem; }
-            .btn { padding: 0.8rem 1.8rem; font-size: 0.9rem; }
-            #projects .project-card { height: 300px; }
+            .btn { padding: 0.8rem 1.5rem; font-size: 0.9rem; }
         }
 
         /* Mobile Menu */
